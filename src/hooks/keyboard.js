@@ -7,6 +7,24 @@ const keys = reactive({
   ArrowLeft: {
     pressed: false,
   },
+  ArrowUp: {
+    pressed: false,
+  },
+  ArrowDown: {
+    pressed: false,
+  },
+  d: {
+    pressed: false,
+  },
+  a: {
+    pressed: false,
+  },
+  w: {
+    pressed: false,
+  },
+  s: {
+    pressed: false,
+  },
   c: {
     pressed: false,
   },
@@ -14,16 +32,23 @@ const keys = reactive({
 
 window.addEventListener("keydown", (event) => {
   let { key } = event;
+
   switch (key) {
-    case "ArrowUp":
+    case "w" || "ArrowUp":
+      keys.ArrowUp.pressed = true;
+      keys.w.pressed = true;
       break;
-    case "ArrowDown":
+    case "s" || "ArrowDown":
+      keys.ArrowDown.pressed = true;
+      keys.s.pressed = true;
       break;
-    case "ArrowLeft":
+    case "a" || "ArrowLeft":
       keys.ArrowLeft.pressed = true;
+      keys.a.pressed = true;
       break;
-    case "ArrowRight":
+    case "d" || "ArrowRight":
       keys.ArrowRight.pressed = true;
+      keys.d.pressed = true;
       break;
     case "c":
       keys.c.pressed = true;
@@ -34,15 +59,21 @@ window.addEventListener("keydown", (event) => {
 window.addEventListener("keyup", (event) => {
   let { key } = event;
   switch (key) {
-    case "ArrowUp":
+    case "w" || "ArrowUp":
+      keys.ArrowUp.pressed = false;
+      keys.w.pressed = false;
       break;
-    case "ArrowDown":
+    case "s" || "ArrowDown":
+      keys.ArrowDown.pressed = false;
+      keys.s.pressed = false;
       break;
-    case "ArrowLeft":
+    case "a" || "ArrowLeft":
       keys.ArrowLeft.pressed = false;
+      keys.a.pressed = false;
       break;
-    case "ArrowRight":
+    case "d" || "ArrowRight":
       keys.ArrowRight.pressed = false;
+      keys.d.pressed = false;
       break;
     case "c":
       keys.c.pressed = false;
