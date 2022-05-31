@@ -43,14 +43,17 @@ function useRender() {
       player.value.velcoity.x = -5;
     } else if (keys.d.pressed) {
       player.value.velcoity.x = 5;
-    } else if (keys.w.pressed && !isc.value) {
+    } else {
+      player.value.velcoity.x = 0;
+    }
+    if (keys.w.pressed && !isc.value) {
       player.value.velcoity.y = -5;
     } else if (keys.s.pressed && !isc.value) {
       player.value.velcoity.y = 5;
     } else {
-      player.value.velcoity.x = 0;
       player.value.velcoity.y = 0;
     }
+
     if (keys.c.pressed) {
       if (!isc.value) {
         isc.value = true;

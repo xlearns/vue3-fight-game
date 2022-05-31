@@ -53,9 +53,10 @@ function useSprite() {
       bottomBox.value.y = map.value.y;
       sprite.value.position.y = bottomBox.value.y - sprite.value.height + 10;
     }
+    console.log(Math.ceil(bottomBox.value.y), Math.ceil(total.value));
     if (
       total.value == 0 ||
-      Math.ceil(bottomBox.value.y) == Math.ceil(total.value)
+      Math.ceil(bottomBox.value.y) >= Math.ceil(total.value)
     ) {
       sprite.value.g = 0;
       total.value = 0;
